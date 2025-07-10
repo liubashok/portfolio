@@ -41,4 +41,24 @@ body {
       drop-shadow(0 0 5px white) drop-shadow(0 0 6px white)
       drop-shadow(0 0 7px white);
   }
+
+  .moon {
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at 75% 35%,
+      transparent 45px,
+      white 60px
+    );
+  }
+  .sun-glow {
+    filter: drop-shadow(0 0 4px rgb(255, 240, 0))
+      drop-shadow(0 0 8px rgba(255, 230, 0, 0.8))
+      drop-shadow(0 0 10px rgba(255, 220, 0, 0.7))
+      drop-shadow(0 0 20px rgba(255, 180, 0, 0.6))
+      drop-shadow(0 0 50px rgba(250, 79, 0, 0.5));
+  }
 }

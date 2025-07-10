@@ -1,7 +1,8 @@
 "use client";
 
+import cn from "clsx";
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -13,21 +14,25 @@ export function ThemeToggle() {
 
   return (
     <button
+      style={
+        theme === "dark"
+          ? { backgroundImage: "url('/moon.png')" }
+          : {
+              backgroundColor: "white",
+            }
+      }
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+      className={cn(
+        "relative h-20 w-20 rounded-full",
+        theme === "dark"
+          ? "hover:shadow-[0_0_50px_10px_rgba(255,255,255,0.3)]"
+          : "sun-glow shadow-[inset_0_0_15px_rgba(255,255,0,1)] hover:shadow-[0_0_80px_10px_rgba(255,255,255,0.1)]"
+      )}
     >
       {theme === "dark" ? (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          width="24"
-          height="24"
-        >
-          <path d="M21 12.79c-.45.15-.93.21-1.42.21-4.97 0-9-4.03-9-9 0-.49.07-.97.21-1.42a9.001 9.001 0 1010.21 10.21z" />
-        </svg>
+        <div className="absolute top-0 -translate-y-[10%] shadow-[0_0_10px_10px_rgba(0,0,0,1)] bg-black rounded-full h-16 z-20 w-16 translate-x-[40%]" />
       ) : (
-        "☀️"
+        <div />
       )}
     </button>
   );

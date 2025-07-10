@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="ru" suppressHydrationWarning>
       <head></head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen bg-gradient-to-tr from-sky-700 via-sky-200 to-sky-50 dark:bg-gradient-to-bl dark:from-black dark:via-black dark:to-orange-900 text-black dark:text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen bg-gradient-to-tr from-blue-500 via-sky-300 to-sky-50 dark:bg-gradient-to-bl dark:from-black dark:via-black dark:to-orange-950 text-black dark:text-white`}
       >
         <Providers>
           <StarField />

@@ -11,7 +11,7 @@ export function Layout({ children }: PropsWithChildren<unknown>) {
           <Link href="/projects">Проекты</Link>
           <Link href="/contact">Контакты</Link>
         </nav>
-        <div className="flex justify-end mt-4">
+        <div className="flex justify-end">
           <ThemeToggle />
         </div>
       </header>
