@@ -56,8 +56,7 @@ export function Star({ x, y, size, twinkle }: StarProps) {
     >
       <div
         className={clsx(
-          "rounded-full opacity-100 transition-all duration-500",
-          mode === "dark" ? "bg-white " : "bg-sky-50 ",
+          "rounded-full opacity-100 transition-all bg-white duration-500",
           active && clsx("opacity-100 star-glow")
         )}
         style={{

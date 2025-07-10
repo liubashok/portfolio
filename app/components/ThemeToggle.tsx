@@ -25,7 +25,7 @@ export function ThemeToggle() {
       className={cn(
         "relative h-20 w-20 rounded-full",
         theme === "dark"
-          ? "hover:shadow-[0_0_50px_10px_rgba(255,255,255,0.3)]"
+          ? "hover:shadow-[0_0_10px_10px_rgba(255,255,255,0.3)]"
           : "sun-glow shadow-[inset_0_0_15px_rgba(255,255,0,1)] hover:shadow-[0_0_80px_10px_rgba(255,255,255,0.1)]"
       )}
     >

@@ -5,7 +5,7 @@ export function Layout({ children }: PropsWithChildren<unknown>) {
   return (
     <div>
       <header className="p-6">
-        <nav className="flex gap-4 justify-center">
+        <nav className="flex gap-4 font-extralight text-2xl justify-center">
           <Link href="/">Главная</Link>
           <Link href="/about">Обо мне</Link>
           <Link href="/projects">Проекты</Link>
