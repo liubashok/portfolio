@@ -35,25 +35,6 @@ body {
 }
 
 @layer components {
-  .star-glow {
-    filter: drop-shadow(0 0 1px white) drop-shadow(0 0 2px white)
-      drop-shadow(0 0 3px white) drop-shadow(0 0 4px white)
-      drop-shadow(0 0 5px white) drop-shadow(0 0 6px white)
-      drop-shadow(0 0 7px white);
-  }
-
-  .moon {
-    position: absolute;
-    top: 0;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: radial-gradient(
-      circle at 75% 35%,
-      transparent 45px,
-      white 60px
-    );
-  }
   .sun-glow {
     filter: drop-shadow(0 0 4px rgb(255, 240, 0))
       drop-shadow(0 0 8px rgba(255, 230, 0, 0.8))
@@ -61,4 +42,37 @@ body {
       drop-shadow(0 0 20px rgba(255, 180, 0, 0.6))
       drop-shadow(0 0 50px rgba(250, 79, 0, 0.5));
   }
+  .cloud {
+    filter: drop-shadow(0 0 8px rgb(255, 255, 255))
+      drop-shadow(0 0 10px rgb(255, 255, 255))
+      drop-shadow(0 0 16px rgb(255, 255, 255))
+      drop-shadow(0 0 20px rgba(255, 255, 255))
+      drop-shadow(0 0 32px rgb(255, 255, 255));
+    box-shadow: inset 0 0 0px rgba(255, 255, 255, 0);
+    text-align: center;
+    border-radius: 100%;
+  }
+  .night-cloud {
+    filter: drop-shadow(0 0 8px rgb(252, 82, 3))
+      drop-shadow(0 0 10px rgb(250, 104, 0))
+      drop-shadow(0 0 16px rgb(223, 73, 14))
+      drop-shadow(0 0 20px rgba(171, 15, 15))
+      drop-shadow(0 0 32px rgb(135, 43, 10));
+    box-shadow: inset 0 0 0px rgba(255, 255, 255, 0) rgba(250, 79, 0, 0.5);
+    text-align: center;
+    border-radius: 100%;
+  }
+}
+
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+#tsparticles:hover {
+  filter: drop-shadow(0 0 2px white) drop-shadow(0 0 4px white);
 }

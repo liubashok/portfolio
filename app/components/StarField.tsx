@@ -1,35 +1,70 @@
 "use client";
+import { tsParticles } from "@tsparticles/engine";
+import { loadStarsPreset } from "@tsparticles/preset-stars";
+import Particles from "@tsparticles/react";
+import { useEffect } from "react";
+import { loadFull } from "tsparticles";
 
-import { useEffect, useState } from "react";
-import { Star } from "./Star";
-import { StarData, generateStars } from "./generateStars";
-
-export const StarField = () => {
-  const [stars, setStars] = useState<StarData[]>([]);
-
+export function StarField() {
   useEffect(() => {
-    // первая генерация при монтировании
-    const generate = () => setStars(generateStars(1000));
-    generate();
-    // регенерация при изменении размера окна
-    window.addEventListener("resize", generate);
-
-    // очистка при размонтировании
-    return () => {
-      window.removeEventListener("resize", generate);
-    };
+    (async () => {
+      await loadFull(tsParticles);
+      await loadStarsPreset(tsParticles);
+    })();
   }, []);
+
   return (
-    <div className="fixed inset-0 z-10 overflow-hidden pointer-events-none ">
-      {stars.map((star, i) => (
-        <Star
-          key={i}
-          x={star.x}
-          y={star.y}
-          size={star.size}
-          twinkle={star.twinkle}
-        />
-      ))}
-    </div>
+    <Particles
+      id="tsparticles"
+      options={{
+        preset: "stars",
+        fullScreen: { enable: false },
+        detectRetina: true,
+        detectOn: "window",
+        particles: {
+          number: { value: 1000 },
+          size: {
+            value: { min: 0.1, max: 1.2 },
+            animation: {
+              enable: true,
+              speed: 2,
+              startValue: "random",
+              mode: "auto",
+              sync: false,
+            },
+          },
+          color: { value: "#fffecf" },
+          move: { enable: false },
+          opacity: { value: 1 },
+        },
+        interactivity: {
+          detectsOn: "window",
+          events: {
+            onHover: { enable: true, mode: "bubble" },
+          },
+          modes: {
+            bubble: {
+              distance: 50,
+              size: 2.5,
+              duration: 1,
+              opacity: 1,
+              speed: 3,
+              color: { value: "#ffffff" },
+              shadow: {
+                enable: true,
+                color: { value: "#ffffff" },
+                blur: 10,
+              },
+            },
+          },
+        },
+      }}
+      style={{
+        position: "fixed",
+        inset: 0,
+        pointerEvents: "none",
+        zIndex: 10,
+      }}
+    />
   );
-};
+}

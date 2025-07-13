@@ -2,17 +2,17 @@ import Image from "next/image";
 
 export default function AboutPage() {
   return (
-    <section className="max-w-3xl mx-auto p-10">
-      <h1 className="text-3xl font-bold mb-6">Обо мне</h1>
-      <div className="flex flex-col md:flex-row gap-6 items-start">
+    <section className="absolute z-20 max-w-[1000px] left-1/2 -translate-x-1/2">
+      <h1 className="text-xl sm:text-3xl text-start font-bold mb-4">Обо мне</h1>
+      <div className="flex min-w-[320px] gap-4">
         <Image
-          src="/avatar.jpg"
+          src="/small-avatar.jpg"
           alt="Фото"
-          width={200}
-          height={267}
-          className="rounded-full"
+          width={100}
+          height={134}
+          className="rounded-full min-w-[100px] max-h-[134px]"
         />
-        <p className=" eading-relaxed">
+        <p className="text-lg sm:text-2xl">
           Меня зовут Любовь, я фронтенд-разработчик. Работала с React, Next.js,
           TypeScript и другими современными технологиями. Создаю быстрые,
           адаптивные и красивые интерфейсы.

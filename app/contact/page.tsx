@@ -29,7 +29,7 @@ export default function ContactPage() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 max-w-xl mx-auto p-10"
+      className="flex absolute min-w-80 sm:w-[500px] -translate-x-1/2 left-1/2 z-20 flex-col gap-4"
     >
       <input
         name="name"

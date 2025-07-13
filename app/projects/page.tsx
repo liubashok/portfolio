@@ -22,16 +22,16 @@ const projects: Project[] = [
 
 export default function ProjectsPage() {
   return (
-    <section className="max-w-5xl mx-auto p-10">
+    <section className="absolute left-1/2 -translate-x-1/2 ">
       <h1 className="text-3xl font-bold mb-6">Проекты</h1>
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="flex flex-col sm:flex-row gap-4">
         {projects.map((project) => (
           <a
             key={project.title}
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="border rounded-lg p-4 hover:shadow-lg transition"
+            className="border z-20 rounded-lg p-4 hover:shadow-lg transition"
           >
             <img
               src={project.image}
