@@ -19,15 +19,16 @@ export function StarField() {
       options={{
         preset: "stars",
         fullScreen: { enable: false },
+        fpsLimit: 60,
         detectRetina: true,
         detectOn: "window",
         particles: {
           number: { value: 1000 },
           size: {
-            value: { min: 0.1, max: 1.2 },
+            value: { min: 0.1, max: 0.5 },
             animation: {
               enable: true,
-              speed: 2,
+              speed: 1,
               startValue: "random",
               mode: "auto",
               sync: false,
@@ -35,7 +36,20 @@ export function StarField() {
           },
           color: { value: "#fffecf" },
           move: { enable: false },
-          opacity: { value: 1 },
+          opacity: {
+            value: 0.6,
+          },
+          twinkle: {
+            particles: {
+              enable: true,
+              frequency: 0.05, // 5% шанс на каждом кадре
+              opacity: 1, // максимальная яркость при мигании
+              color: "#ffffff", // цвет мигания (может отличаться от основной)
+            },
+            lines: {
+              enable: false, // если есть линии, можно их выключить
+            },
+          },
         },
         interactivity: {
           detectsOn: "window",
@@ -44,16 +58,16 @@ export function StarField() {
           },
           modes: {
             bubble: {
-              distance: 50,
-              size: 2.5,
-              duration: 1,
+              distance: 30,
+              size: 1.5,
+              duration: 0.1,
               opacity: 1,
-              speed: 3,
+              speed: 1,
               color: { value: "#ffffff" },
               shadow: {
                 enable: true,
                 color: { value: "#ffffff" },
-                blur: 10,
+                blur: 5,
               },
             },
           },
