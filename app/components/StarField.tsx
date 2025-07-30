@@ -18,6 +18,10 @@ export function StarField() {
       id="tsparticles"
       options={{
         preset: "stars",
+        background: {
+          color: { value: "transparent" },
+          opacity: 0,
+        },
         fullScreen: { enable: false },
         fpsLimit: 60,
         detectRetina: true,
@@ -42,12 +46,12 @@ export function StarField() {
           twinkle: {
             particles: {
               enable: true,
-              frequency: 0.05, // 5% шанс на каждом кадре
-              opacity: 1, // максимальная яркость при мигании
-              color: "#ffffff", // цвет мигания (может отличаться от основной)
+              frequency: 0.05,
+              opacity: 1,
+              color: "#ffffff",
             },
             lines: {
-              enable: false, // если есть линии, можно их выключить
+              enable: false,
             },
           },
         },
