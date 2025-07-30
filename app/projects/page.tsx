@@ -1,4 +1,8 @@
+import Image from "next/image";
+
 type Project = {
+  width: number;
+  height: number;
   title: string;
   description: string;
   image: string;
@@ -7,15 +11,19 @@ type Project = {
 
 const projects: Project[] = [
   {
+    width: 64,
+    height: 68,
     title: "Лендинг яхт-клуба",
     description: "Лендинг, выполненный в рамках обучения вёрстке",
-    image: "landing-logo.svg",
+    image: "/landing-logo.svg",
     link: "https://liubashok.github.io/my-landing-project/",
   },
   {
+    width: 100,
+    height: 97,
     title: "Интернет-магазин косметики",
     description: "Тестовый проект для изучения React и Redux",
-    image: "makeup.png",
+    image: "/makeup.png",
     link: "https://liubashok.github.io/makeup_products/",
   },
 ];
@@ -33,7 +41,9 @@ export default function ProjectsPage() {
             rel="noopener noreferrer"
             className="border flex z-20 rounded-lg gap-4 p-4 hover:shadow-lg transition"
           >
-            <img
+            <Image
+              width={project.width}
+              height={project.height}
               src={project.image}
               alt={project.title}
               className="rounded mb-4"
