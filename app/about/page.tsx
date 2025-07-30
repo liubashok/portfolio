@@ -6,7 +6,7 @@ export default function AboutPage() {
       <h1 className="text-xl sm:text-3xl text-start font-bold mb-4">Обо мне</h1>
       <div className="flex min-w-[320px] gap-4">
         <Image
-          src="/small-avatar.jpg"
+          src="/small-avatar.png"
           alt="Фото"
           width={100}
           height={134}
