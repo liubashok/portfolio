@@ -35,20 +35,20 @@ export default function ContactPage() {
         name="name"
         required
         placeholder="Имя"
-        className="border p-2 rounded"
+        className="border p-2 rounded dark:bg-black"
       />
       <input
         name="email"
         type="email"
         required
         placeholder="Email"
-        className="border p-2 rounded"
+        className="border p-2 rounded dark:bg-black"
       />
       <textarea
         name="message"
         required
         placeholder="Сообщение"
-        className="border p-2 rounded h-32"
+        className="border p-2 rounded h-32 dark:bg-black"
       />
       <button
         type="submit"
