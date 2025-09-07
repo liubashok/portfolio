@@ -8,6 +8,7 @@ type Project = {
   image: string;
   link: string;
   filter: string;
+  repository: string;
 };
 
 const projects: Project[] = [
@@ -19,6 +20,7 @@ const projects: Project[] = [
     image: "/landing-logo.svg",
     link: "https://liubashok.github.io/my-landing-project/",
     filter: "brightness-0 invert",
+    repository: "https://github.com/liubashok/my-landing-project",
   },
   {
     width: 64,
@@ -28,11 +30,11 @@ const projects: Project[] = [
     image: "/pomada.svg",
     link: "https://liubashok.github.io/makeup_products/",
     filter: "filter-none",
+    repository: "https://github.com/liubashok/makeup_products",
   },
 ];
 
 export default function ProjectsPage() {
-  console.log(projects[0].filter);
   return (
     <section className="absolute min-w-[350px] left-1/2 -translate-x-1/2 z-20">
       <h1 className="text-3xl tracking-wider text-white font-light mb-6">
@@ -40,29 +42,35 @@ export default function ProjectsPage() {
       </h1>
       <div className="flex flex-col sm:flex-row gap-4">
         {projects.map((project) => (
-          <a
-            key={project.title}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-dotted dark:bg-black bg-[#075985] flex z-20 rounded-lg gap-4 p-4 hover:shadow-lg transition"
-          >
-            <Image
-              width={project.width}
-              height={project.height}
-              src={project.image}
-              alt={project.title}
-              className={`rounded mb-4 ${project.filter}`}
-            />
-            <div>
-              <h2 className="text-xl tracking-wider text-white font-medium">
-                {project.title}
-              </h2>
-              <p className="text-base font-normal text-white tracking-wider">
-                {project.description}
+          <div key={project.title} className="flex flex-col">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-dotted dark:bg-black bg-[#075985] flex z-20 rounded-lg gap-4 p-4 hover:shadow-lg transition"
+            >
+              <Image
+                width={project.width}
+                height={project.height}
+                src={project.image}
+                alt={project.title}
+                className={`rounded mb-4 ${project.filter}`}
+              />
+              <div>
+                <h2 className="text-lg tracking-wider text-white font-semibold">
+                  {project.title}
+                </h2>
+                <p className="text-sm font-normal text-blue-300 dark:text-rose-100 tracking-wider">
+                  {project.description}
+                </p>
+              </div>
+            </a>
+            <a href={project.repository}>
+              <p className="tracking-widest text-sm text-center font-semibold text-blue-950 dark:text-rose-900">
+                Ссылка на репозиторий
               </p>
-            </div>
-          </a>
+            </a>
+          </div>
         ))}
       </div>
     </section>

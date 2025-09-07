@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="ru" suppressHydrationWarning>
       <head></head>
       <body
-        className={`${handjet.className} antialiased bg-gradient-to-tr from-blue-950 via-sky-700 to-sky-300 dark:bg-gradient-to-bl dark:from-black dark:via-black dark:to-orange-950 text-black dark:text-white`}
+        className={`${handjet.className} antialiased bg-gradient-to-tr from-slate-900 via-sky-700 to-slate-400 dark:bg-gradient-to-bl dark:from-black dark:via-black dark:to-orange-950 text-white`}
       >
         <Providers>
           <StarField />

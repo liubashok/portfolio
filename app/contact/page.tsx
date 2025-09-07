@@ -56,7 +56,7 @@ export default function ContactPage() {
       >
         Отправить
       </button>
-      {status && <p className="text-sm text-gray-600">{status}</p>}
+      {status && <p className="text-sm tracking-wider text-white">{status}</p>}
     </form>
   );
 }
