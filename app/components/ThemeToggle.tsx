@@ -21,14 +21,14 @@ export function ThemeToggle() {
       style={
         isDark
           ? { backgroundImage: "url('/moon.png')" }
-          : { backgroundColor: "white" }
+          : { backgroundColor: "gold" }
       }
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={cn(
         "z-10 sm:mt-10 mt-4 mr-4 sm:mr-10 relative h-20 w-20 rounded-full",
         isDark
-          ? "hover:shadow-[0_0_10px_10px_rgba(255,255,255,0.3)]"
-          : "sun-glow shadow-[inset_0_0_15px_rgba(255,255,0,1)] hover:shadow-[0_0_80px_10px_rgba(255,255,255,0.1)]"
+          ? "hover:shadow-[0_0_15px_5px_rgba(255,255,255,0.25)]"
+          : "sun-glow hover:shadow-[0_0_600px_10px_rgba(255,100,0,0.15)]"
       )}
     >
       {isDark ? (

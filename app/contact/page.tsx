@@ -29,30 +29,30 @@ export default function ContactPage() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex absolute min-w-80 sm:w-[500px] -translate-x-1/2 left-1/2 z-20 flex-col gap-4"
+      className="flex absolute min-w-80 sm:w-[500px] font-light text-lg -translate-x-1/2 left-1/2 z-20 flex-col gap-4"
     >
       <input
         name="name"
         required
         placeholder="Имя"
-        className="border p-2 rounded dark:bg-black"
+        className="border tracking-wider border-dotted p-2 pl-4 rounded-full dark:bg-black bg-sky-800"
       />
       <input
         name="email"
         type="email"
         required
         placeholder="Email"
-        className="border p-2 rounded dark:bg-black"
+        className="border tracking-wider border-dotted p-2 pl-4 rounded-full dark:bg-black bg-sky-800"
       />
       <textarea
         name="message"
         required
         placeholder="Сообщение"
-        className="border p-2 rounded h-32 dark:bg-black"
+        className="border tracking-wider border-dotted p-2 pl-4 rounded-3xl h-32 dark:bg-black bg-sky-800"
       />
       <button
         type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded"
+        className="tracking-wider font-medium text-xl mt-6 px-4 py-2 dark:bg-rose-950 bg-blue-400 dark:text-rose-200 dark:hover:text-white text-blue-950 hover:text-indigo-800 hover:bg-blue-200 rounded-full dark:hover:bg-rose-800 transition"
       >
         Отправить
       </button>
