@@ -40,6 +40,7 @@ export default function AboutPage() {
             width={100}
             height={142}
             className="rounded-full border-white border-dotted border min-w-[100px] max-h-[142px]"
+            unoptimized
           />
           {showButton && (
             <button
