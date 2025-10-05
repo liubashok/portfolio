@@ -1,32 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import { ScrollButton } from "../components/ScrollButton";
 
 export default function AboutPage() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [showButton, setShowButton] = useState(true);
-
-  const handleScrollDown = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollTo({
-        top: containerRef.current.scrollHeight,
-        behavior: "smooth",
-      });
-      setShowButton(false);
-    }
-  };
-  const handleScroll = () => {
-    if (containerRef.current) {
-      const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
-
-      if (scrollTop + clientHeight >= scrollHeight - 5) {
-        setShowButton(false);
-      } else {
-        setShowButton(true);
-      }
-    }
-  };
   return (
     <section className="absolute z-20 max-w-[1000px] left-1/2 -translate-x-1/2">
       <h1 className="text-xl sm:text-3xl text-start text-white tracking-wider font-semibold mb-5">
@@ -42,27 +21,15 @@ export default function AboutPage() {
             className="rounded-full border-white border-dotted border min-w-[100px] max-h-[142px]"
             unoptimized
           />
-          {showButton && (
-            <button
-              onClick={handleScrollDown}
-              className="text-4xl bg-blue-400 dark:text-rose-200 dark:hover:text-white text-blue-950 hover:text-indigo-800 hover:bg-blue-200 dark:hover:bg-rose-800 dark:bg-rose-950 w-10 h-10 rounded-full border-white border-dotted border text-center transition-opacity ease-in duration-700"
-            >
-              ⇣
-            </button>
-          )}
+          <ScrollButton containerRef={containerRef} />
         </div>
         <div
           ref={containerRef}
-          onScroll={handleScroll}
           className="scrollbar-hidden overflow-y-auto h-72 sm:h-96 "
         >
-          <p
-            ref={containerRef}
-            onScroll={handleScroll}
-            className="text-lg text-white sm:text-xl"
-          >
+          <p className="text-lg text-white sm:text-xl">
             Меня зовут Любовь Шохова, я фронтенд-разработчик. Сейчас я активно
-            ищу работу или стажировку в IT-компанииях. Мой путь во фронтенд
+            ищу работу или стажировку в IT-компаниях. Мой путь во фронтенд
             начался относительно недавно – в начале 2024 года. Я самостоятельно
             обучалась вёрстке в течение года и начала изучать React и
             JavaScript. В этот период я устроилась на стажировку для начинающих
@@ -83,11 +50,6 @@ export default function AboutPage() {
             Сайт, на котором вы находитесь, я тоже создала сама. В разделе
             &quot;Проекты&quot; я разместила свои работы и оставила ссылки на
             репозитории GitHub.
-            <br />
-            <br />Я ищу работу, потому что прохожу стажировку уже полгода, а
-            компания изначально сообщила всем, что не трудоустраивает желающих
-            после её окончания. Сейчас я ощущаю стагнацию в своём развитии и
-            хочу двигаться дальше.
           </p>
         </div>
       </div>

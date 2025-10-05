@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { useRef } from "react";
+import { ScrollButton } from "../components/ScrollButton";
 
 type Project = {
   width: number;
@@ -32,15 +36,29 @@ const projects: Project[] = [
     filter: "filter-none",
     repository: "https://github.com/liubashok/makeup_products",
   },
+  {
+    width: 64,
+    height: 64,
+    title: "Лендинг загородного дома",
+    description: "Лендинг, созданный для продажи дома",
+    image: "/avatar.png",
+    link: "https://liubashok.github.io/house-landing/",
+    filter: "filter-none",
+    repository: "https://liubashok.github.io/house-landing/",
+  },
 ];
 
 export default function ProjectsPage() {
+  const containerRef = useRef<HTMLDivElement>(null);
   return (
     <section className="absolute min-w-[350px] left-1/2 -translate-x-1/2 z-20">
       <h1 className="text-3xl tracking-wider text-white font-light mb-6">
         Проекты
       </h1>
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div
+        className="flex flex-col scrollbar-hidden h-72 sm:h-72 overflow-y-auto gap-4"
+        ref={containerRef}
+      >
         {projects.map((project) => (
           <div key={project.title} className="flex flex-col">
             <a
@@ -73,6 +91,7 @@ export default function ProjectsPage() {
           </div>
         ))}
       </div>
+      <ScrollButton containerRef={containerRef} />
     </section>
   );
 }
